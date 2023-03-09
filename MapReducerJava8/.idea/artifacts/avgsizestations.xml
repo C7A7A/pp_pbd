@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="avgsizestations">
+    <output-path>$PROJECT_DIR$/out/artifacts/avgsizestations</output-path>
+    <root id="archive" name="avgsizestations.jar">
+      <element id="module-output" name="MapReducerJava8" />
+    </root>
+  </artifact>
+</component>
