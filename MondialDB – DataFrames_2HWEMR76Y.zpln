@@ -1,0 +1,911 @@
+﻿{
+  "paragraphs": [
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "completionKey": "TAB",
+          "editOnDblClick": false,
+          "completionSupport": true,
+          "language": "scala"
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=100",
+              "$$hashKey": "object:10254"
+            },
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=101",
+              "$$hashKey": "object:10255"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1679670970722_316905295",
+      "id": "paragraph_1679670970722_316905295",
+      "dateCreated": "2023-03-24T15:16:10+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:10049",
+      "text": "val citiesDF = spark.read.json(\"/user/czajkamateusz999/labs/spark/mondial.cities.json\").cache()\nval countriesDF = spark.read.json(\"/user/czajkamateusz999/labs/spark/mondial.countries.json\").cache()",
+      "dateUpdated": "2023-03-24T15:16:28+0000",
+      "dateFinished": "2023-03-24T15:16:30+0000",
+      "dateStarted": "2023-03-24T15:16:29+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mcitiesDF\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.Dataset[org.apache.spark.sql.Row]\u001b[0m = [_id: string, country: string ... 8 more fields]\n\u001b[1m\u001b[34mcountriesDF\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.Dataset[org.apache.spark.sql.Row]\u001b[0m = [_id: struct<$oid: string>, area: double ... 9 more fields]\n"
+          }
+        ]
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "completionKey": "TAB",
+          "editOnDblClick": false,
+          "completionSupport": true,
+          "language": "scala"
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1679670979725_325976468",
+      "id": "paragraph_1679670979725_325976468",
+      "dateCreated": "2023-03-24T15:16:19+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:10117",
+      "text": "citiesDF.printSchema()",
+      "dateUpdated": "2023-03-24T15:16:53+0000",
+      "dateFinished": "2023-03-24T15:16:53+0000",
+      "dateStarted": "2023-03-24T15:16:53+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- _id: string (nullable = true)\n |-- country: string (nullable = true)\n |-- elevation: double (nullable = true)\n |-- latitude: double (nullable = true)\n |-- location: struct (nullable = true)\n |    |-- coordinates: array (nullable = true)\n |    |    |-- element: double (containsNull = true)\n |    |-- type: string (nullable = true)\n |-- longitude: double (nullable = true)\n |-- name: string (nullable = true)\n |-- other_names: array (nullable = true)\n |    |-- element: string (containsNull = true)\n |-- population: long (nullable = true)\n |-- province: string (nullable = true)\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "completionKey": "TAB",
+          "editOnDblClick": false,
+          "completionSupport": true,
+          "language": "scala"
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=104",
+              "$$hashKey": "object:10714"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1679671035956_375757674",
+      "id": "paragraph_1679671035956_375757674",
+      "dateCreated": "2023-03-24T15:17:15+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:10475",
+      "text": "citiesDF.show(truncate=false)",
+      "dateUpdated": "2023-03-24T15:18:03+0000",
+      "dateFinished": "2023-03-24T15:18:03+0000",
+      "dateStarted": "2023-03-24T15:18:03+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---------------------------------------------+-------+---------+--------+-----------------------+---------+------------+--------------------+----------+---------------------------------+\n|_id                                          |country|elevation|latitude|location               |longitude|name        |other_names         |population|province                         |\n+---------------------------------------------+-------+---------+--------+-----------------------+---------+------------+--------------------+----------+---------------------------------+\n|GR-Anatolikis Makedonias kai Thrakis-Kavala  |GR     |0.0      |40.93   |{[24.4, 40.93], Point} |24.4     |Kavala      |null                |58790     |Anatolikis Makedonias kai Thrakis|\n|GR-Anatolikis Makedonias kai Thrakis-Komotini|GR     |45.0     |41.1    |{[25.42, 41.1], Point} |25.42    |Komotini    |null                |null      |Anatolikis Makedonias kai Thrakis|\n|GR-Attikis-Athina                            |GR     |70.0     |37.97   |{[23.72, 37.97], Point}|23.72    |Athina      |[Athens]            |664046    |Attikis                          |\n|GR-Attikis-Peiraias                          |GR     |0.0      |37.95   |{[23.63, 37.95], Point}|23.63    |Peiraias    |[Piraeus, Piräus]   |163688    |Attikis                          |\n|GR-Attikis-Peristeri                         |GR     |50.0     |38.02   |{[23.68, 38.02], Point}|23.68    |Peristeri   |null                |139981    |Attikis                          |\n|GR-Attikis-Acharnes                          |GR     |186.0    |38.08   |{[23.73, 38.08], Point}|23.73    |Acharnes    |null                |106943    |Attikis                          |\n|GR-Dytikis Elladas-Patra                     |GR     |0.0      |38.25   |{[21.73, 38.25], Point}|21.73    |Patra       |[Patras]            |213984    |Dytikis Elladas                  |\n|GR-Dytikis Makedonias-Kozani                 |GR     |710.0    |40.3    |{[21.78, 40.3], Point} |21.78    |Kozani      |null                |null      |Dytikis Makedonias               |\n|GR-Ipeiroy-Ioannina                          |GR     |480.0    |39.67   |{[20.85, 39.67], Point}|20.85    |Ioannina    |null                |112486    |Ipeiroy                          |\n|GR-Ionion Nison-Kerkyra                      |GR     |0.0      |39.58   |{[19.87, 39.58], Point}|19.87    |Kerkyra     |[Corfu, Korfu]      |null      |Ionion Nison                     |\n|GR-Kentrikis Makedonias-Thessaloniki         |GR     |0.0      |40.65   |{[22.9, 40.65], Point} |22.9     |Thessaloniki|null                |325182    |Kentrikis Makedonias             |\n|GR-Kritis-Chania                             |GR     |0.0      |35.52   |{[24.02, 35.52], Point}|24.02    |Chania      |null                |108642    |Kritis                           |\n|AL-Albania-Durrës                            |AL     |0.0      |41.32   |{[19.45, 41.32], Point}|19.45    |Durrës      |null                |113249    |Albania                          |\n|GR-Notioy Aigaioy-Ermoupoli                  |GR     |0.0      |37.43   |{[24.92, 37.43], Point}|24.92    |Ermoupoli   |null                |null      |Notioy Aigaioy                   |\n|GR-Notioy Aigaioy-Rhodes                     |GR     |26.0     |36.43   |{[28.22, 36.43], Point}|28.22    |Rhodes      |[Rhodos]            |115490    |Notioy Aigaioy                   |\n|GR-Peloponnisos-Tripoli                      |GR     |655.0    |37.52   |{[22.38, 37.52], Point}|22.38    |Tripoli     |null                |null      |Peloponnisos                     |\n|GR-Kritis-Iraklio                            |GR     |150.0    |38.05   |{[23.77, 38.05], Point}|23.77    |Iraklio     |[Irakleio, Iraklion]|173993    |Kritis                           |\n|GR-Stereas Elladas-Lamia                     |GR     |50.0     |38.9    |{[22.43, 38.9], Point} |22.43    |Lamia       |null                |75315     |Stereas Elladas                  |\n|GR-Stereas Elladas-Chalkida                  |GR     |0.0      |38.47   |{[23.6, 38.47], Point} |23.6     |Chalkida    |[Chalcis, Chalkis]  |102223    |Stereas Elladas                  |\n|GR-Thessalias-Larissa                        |GR     |67.0     |39.64   |{[22.42, 39.64], Point}|22.42    |Larissa     |null                |162591    |Thessalias                       |\n+---------------------------------------------+-------+---------+--------+-----------------------+---------+------------+--------------------+----------+---------------------------------+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "completionKey": "TAB",
+          "editOnDblClick": false,
+          "completionSupport": true,
+          "language": "scala"
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1679671003884_1678346762",
+      "id": "paragraph_1679671003884_1678346762",
+      "dateCreated": "2023-03-24T15:16:43+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:10264",
+      "text": "countriesDF.printSchema()",
+      "dateUpdated": "2023-03-24T15:17:27+0000",
+      "dateFinished": "2023-03-24T15:17:07+0000",
+      "dateStarted": "2023-03-24T15:17:07+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- _id: struct (nullable = true)\n |    |-- $oid: string (nullable = true)\n |-- area: double (nullable = true)\n |-- capital: string (nullable = true)\n |-- code: string (nullable = true)\n |-- gdp: double (nullable = true)\n |-- government: string (nullable = true)\n |-- independence: struct (nullable = true)\n |    |-- $date: string (nullable = true)\n |-- inflation: double (nullable = true)\n |-- name: string (nullable = true)\n |-- population: array (nullable = true)\n |    |-- element: struct (containsNull = true)\n |    |    |-- value: long (nullable = true)\n |    |    |-- year: long (nullable = true)\n |-- unemployment: double (nullable = true)\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "completionKey": "TAB",
+          "editOnDblClick": false,
+          "completionSupport": true,
+          "language": "scala"
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=106",
+              "$$hashKey": "object:10787"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1679671021765_1500545833",
+      "id": "paragraph_1679671021765_1500545833",
+      "dateCreated": "2023-03-24T15:17:01+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:10374",
+      "text": "countriesDF.show()",
+      "dateUpdated": "2023-03-24T15:18:25+0000",
+      "dateFinished": "2023-03-24T15:18:26+0000",
+      "dateStarted": "2023-03-24T15:18:25+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------------------+---------+--------------------+----+---------+--------------------+--------------------+---------+--------------+--------------------+------------+\n|                 _id|     area|             capital|code|      gdp|          government|        independence|inflation|          name|          population|unemployment|\n+--------------------+---------+--------------------+----+---------+--------------------+--------------------+---------+--------------+--------------------+------------+\n|{581cb5a519ec2deb...| 547030.0|F-Île-de-France-P...|   F|2739000.0|            republic|                null|      0.9|        France|[{40502513, 1946}...|        10.2|\n|{581cb5a519ec2deb...| 131940.0|   GR-Attikis-Athina|  GR| 243300.0|parliamentary rep...|{1829-01-01T00:00...|     -0.8|        Greece|[{1096810, 1861},...|        27.9|\n|{581cb5a519ec2deb...|  14026.0|MNE-Montenegro-Po...| MNE|   4518.0|            republic|{2006-06-03T00:00...|      4.0|    Montenegro|[{311341, 1921}, ...|        19.1|\n|{581cb5a519ec2deb...| 504750.0|     E-Madrid-Madrid|   E|1356000.0|parliamentary mon...|{1492-01-01T00:00...|      1.8|         Spain|[{18618086, 1900}...|        26.3|\n|{581cb5a519ec2deb...| 356910.0|     D-Berlin-Berlin|   D|3593000.0|    federal republic|{1871-01-18T00:00...|      1.6|       Germany|[{68230796, 1950}...|         5.3|\n|{581cb5a519ec2deb...|  83850.0|         A-Wien-Wien|   A| 417900.0|    federal republic|{1918-11-12T00:00...|      2.1|       Austria|[{4497873, 1869},...|         4.9|\n|{581cb5a519ec2deb...|  78703.0|      CZ-Praha-Praha|  CZ| 194800.0|parliamentary dem...|{1993-01-01T00:00...|      1.4|Czech Republic|[{8876260, 1950},...|         7.1|\n|{581cb5a519ec2deb...|  28750.0|   AL-Albania-Tirana|  AL|  12800.0|parliamentary dem...|{1912-11-28T00:00...|      1.7|       Albania|[{1214489, 1950},...|        16.9|\n|{581cb5a519ec2deb...|  93030.0| H-Budapest-Budapest|   H| 130600.0|parliamentary dem...|{1918-11-18T00:00...|      1.9|       Hungary|[{9204799, 1949},...|        10.5|\n|{581cb5a519ec2deb...|  48845.0|SK-Bratislavský-B...|  SK|  96960.0|parliamentary dem...|{1993-01-01T00:00...|      1.7|      Slovakia|[{3436574, 1950},...|        14.4|\n|{581cb5a519ec2deb...|    160.0|FL-Liechtenstein-...|  FL|   5113.0|hereditary consti...|{1806-07-12T00:00...|     -0.7| Liechtenstein|[{13757, 1950}, {...|         2.3|\n|{581cb5a519ec2deb...| 301230.0|        I-Lazio-Roma|   I|2068000.0|            republic|{1861-03-17T00:00...|      1.2|         Italy|[{22182377, 1861}...|        12.4|\n|{581cb5a519ec2deb...|  20256.0|SLO-Slovenia-Ljub...| SLO|  46820.0|parliamentary rep...|{1991-06-25T00:00...|      1.8|      Slovenia|[{1101854, 1857},...|        13.1|\n|{581cb5a519ec2deb...|  10887.0|KOS-Kosovo-Prishtine| KOS|   7150.0|            republic|{2008-02-17T00:00...|      1.8|        Kosovo|[{1584440, 1981},...|        30.9|\n|{581cb5a519ec2deb...|  25333.0| MK-Macedonia-Skopje|  MK|  10650.0|parliamentary dem...|{1991-09-17T00:00...|      2.8|     Macedonia|[{808724, 1921}, ...|        28.6|\n|{581cb5a519ec2deb...|  77474.0|  SRB-Serbia-Beograd| SRB|  43680.0|            republic|{1992-04-11T00:00...|      2.2|        Serbia|[{6732256, 1950},...|        20.1|\n|{581cb5a519ec2deb...|    450.0|AND-Andorra-Andor...| AND|   4800.0|parliamentary dem...|{1278-09-08T00:00...|      1.1|       Andorra|[{6197, 1950}, {1...|         4.0|\n|{581cb5a519ec2deb...| 603700.0|        UA-Kyïv-Kyïv|  UA| 175500.0|            republic|{1991-12-01T00:00...|      0.7|       Ukraine|[{37297652, 1950}...|         8.0|\n|{581cb5a519ec2deb...|1.70752E7|     R-Moscow-Moskva|   R|2113000.0|          federation|{1991-08-24T00:00...|      6.8|        Russia|[{102798657, 1950...|         5.8|\n|{581cb5a519ec2deb...|  30510.0|B-Bruxelles-Bruxe...|   B| 507400.0|federal parliamen...|{1830-10-04T00:00...|      1.3|       Belgium|[{8879814, 1947},...|         8.8|\n+--------------------+---------+--------------------+----+---------+--------------------+--------------------+---------+--------------+--------------------+------------+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "completionKey": "TAB",
+          "editOnDblClick": false,
+          "completionSupport": true,
+          "language": "scala"
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=112",
+              "$$hashKey": "object:11201"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1679671050012_1443976565",
+      "id": "paragraph_1679671050012_1443976565",
+      "dateCreated": "2023-03-24T15:17:30+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:10580",
+      "text": "val populationPoland = countriesDF.where(\"name = 'Poland'\").select(explode($\"population\").as(\"pop\"))\npopulationPoland.show()",
+      "dateUpdated": "2023-03-24T15:24:32+0000",
+      "dateFinished": "2023-03-24T15:24:33+0000",
+      "dateStarted": "2023-03-24T15:24:33+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----------------+\n|             pop|\n+----------------+\n|{23929757, 1946}|\n|{24613684, 1950}|\n|{29405729, 1960}|\n|{32749400, 1970}|\n|{35061450, 1978}|\n|{37878641, 1988}|\n|{38230000, 2002}|\n|{38167786, 2005}|\n|{38153389, 2009}|\n|{38501000, 2011}|\n|{38533789, 2012}|\n+----------------+\n\n\u001b[1m\u001b[34mpopulationPoland\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [pop: struct<value: bigint, year: bigint>]\n"
+          }
+        ]
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "completionKey": "TAB",
+          "editOnDblClick": false,
+          "completionSupport": true,
+          "language": "scala"
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=159",
+              "$$hashKey": "object:13110"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1679671149209_739965353",
+      "id": "paragraph_1679671149209_739965353",
+      "dateCreated": "2023-03-24T15:19:09+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:10792",
+      "text": "val explodedDF = countriesDF.select($\"name\", $\"code\", explode($\"population\").as(\"pop\"))\nexplodedDF.show()",
+      "dateUpdated": "2023-03-24T16:14:03+0000",
+      "dateFinished": "2023-03-24T16:14:03+0000",
+      "dateStarted": "2023-03-24T16:14:03+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+------+----+----------------+\n|  name|code|             pop|\n+------+----+----------------+\n|France|   F|{40502513, 1946}|\n|France|   F|{42777162, 1954}|\n|France|   F|{46520271, 1962}|\n|France|   F|{49778540, 1968}|\n|France|   F|{52591584, 1975}|\n|France|   F|{54334871, 1982}|\n|France|   F|{56615155, 1990}|\n|France|   F|{60185831, 1999}|\n|France|   F|{60825000, 2006}|\n|France|   F|{64933400, 2011}|\n|Greece|  GR| {1096810, 1861}|\n|Greece|  GR| {1457894, 1870}|\n|Greece|  GR| {1679470, 1879}|\n|Greece|  GR| {2433806, 1896}|\n|Greece|  GR| {2631592, 1907}|\n|Greece|  GR| {5016889, 1920}|\n|Greece|  GR| {6204684, 1928}|\n|Greece|  GR| {7344860, 1940}|\n|Greece|  GR| {7632801, 1951}|\n|Greece|  GR| {8388553, 1961}|\n+------+----+----------------+\nonly showing top 20 rows\n\n\u001b[1m\u001b[34mexplodedDF\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [name: string, code: string ... 1 more field]\n"
+          }
+        ]
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "completionKey": "TAB",
+          "editOnDblClick": false,
+          "completionSupport": true,
+          "language": "scala"
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=160",
+              "$$hashKey": "object:13144"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1679671304560_1447340199",
+      "id": "paragraph_1679671304560_1447340199",
+      "dateCreated": "2023-03-24T15:21:44+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:10952",
+      "text": "val cleanedDF = explodedDF.select($\"name\", $\"code\", $\"pop.value\".as(\"pop\"), $\"pop.year\".as(\"year\"))\ncleanedDF.show()",
+      "dateUpdated": "2023-03-24T16:14:05+0000",
+      "dateFinished": "2023-03-24T16:14:06+0000",
+      "dateStarted": "2023-03-24T16:14:05+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+------+----+--------+----+\n|  name|code|     pop|year|\n+------+----+--------+----+\n|France|   F|40502513|1946|\n|France|   F|42777162|1954|\n|France|   F|46520271|1962|\n|France|   F|49778540|1968|\n|France|   F|52591584|1975|\n|France|   F|54334871|1982|\n|France|   F|56615155|1990|\n|France|   F|60185831|1999|\n|France|   F|60825000|2006|\n|France|   F|64933400|2011|\n|Greece|  GR| 1096810|1861|\n|Greece|  GR| 1457894|1870|\n|Greece|  GR| 1679470|1879|\n|Greece|  GR| 2433806|1896|\n|Greece|  GR| 2631592|1907|\n|Greece|  GR| 5016889|1920|\n|Greece|  GR| 6204684|1928|\n|Greece|  GR| 7344860|1940|\n|Greece|  GR| 7632801|1951|\n|Greece|  GR| 8388553|1961|\n+------+----+--------+----+\nonly showing top 20 rows\n\n\u001b[1m\u001b[34mcleanedDF\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [name: string, code: string ... 2 more fields]\n"
+          }
+        ]
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "completionKey": "TAB",
+          "editOnDblClick": false,
+          "completionSupport": true,
+          "language": "scala"
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=161",
+              "$$hashKey": "object:13227"
+            },
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=162",
+              "$$hashKey": "object:13228"
+            },
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=163",
+              "$$hashKey": "object:13229"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1679671903539_241196660",
+      "id": "paragraph_1679671903539_241196660",
+      "dateCreated": "2023-03-24T15:31:43+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:11305",
+      "text": "val population2010 = cleanedDF\n    .groupBy(\"name\", \"code\")\n    .agg(max(when($\"year\" <= 2010, $\"pop\")).as(\"pop2010\"))\n    .select($\"name\", $\"code\", $\"pop2010\")\n    \npopulation2010.agg(sum($\"pop2010\").as(\"sum_people_2010\")).show()\n    ",
+      "dateUpdated": "2023-03-24T16:14:24+0000",
+      "dateFinished": "2023-03-24T16:14:25+0000",
+      "dateStarted": "2023-03-24T16:14:24+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---------------+\n|sum_people_2010|\n+---------------+\n|     6512705216|\n+---------------+\n\n\u001b[1m\u001b[34mpopulation2010\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [name: string, code: string ... 1 more field]\n"
+          }
+        ]
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "completionKey": "TAB",
+          "editOnDblClick": false,
+          "completionSupport": true,
+          "language": "scala"
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=164",
+              "$$hashKey": "object:13281"
+            },
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=165",
+              "$$hashKey": "object:13282"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1679673658427_1178781739",
+      "id": "paragraph_1679673658427_1178781739",
+      "dateCreated": "2023-03-24T16:00:58+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:12119",
+      "text": "population2010.show()",
+      "dateUpdated": "2023-03-24T16:14:32+0000",
+      "dateFinished": "2023-03-24T16:14:33+0000",
+      "dateStarted": "2023-03-24T16:14:33+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------------+----+---------+\n|          name|code|  pop2010|\n+--------------+----+---------+\n|         Congo| RCB|  4001831|\n|    Azerbaijan|  AZ|  8922447|\n|          Iraq| IRQ| 25897848|\n| Cote d'Ivoire|  CI| 18976588|\n|       Lesotho|  LS|  2008921|\n|       Estonia|  EW|  1565662|\n| Guinea-Bissau| GNB|  1586624|\n|          Fiji| FJI|   860559|\n|      Pakistan|  PK|173149306|\n|American Samoa|AMSA|    57291|\n|       Albania|  AL|  3446882|\n|  Saint Martin|SMAR|    37630|\n|        Israel|  IL|  7552000|\n|     Australia| AUS| 19855288|\n|        Uganda| EAU| 24227297|\n|         Kenya| EAK| 40909194|\n|       Belgium|   B| 10296350|\n|        Poland|  PL| 38230000|\n|      Malaysia| MAL| 27565821|\n|     Guatemala| GCA| 11237196|\n+--------------+----+---------+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "completionKey": "TAB",
+          "editOnDblClick": false,
+          "completionSupport": true,
+          "language": "scala"
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=166",
+              "$$hashKey": "object:13320"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1679672076429_1385606548",
+      "id": "paragraph_1679672076429_1385606548",
+      "dateCreated": "2023-03-24T15:34:36+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:11549",
+      "text": "val countriesArea = countriesDF.select(\"name\", \"area\")\ncountriesArea.show()",
+      "dateUpdated": "2023-03-24T16:14:46+0000",
+      "dateFinished": "2023-03-24T16:14:46+0000",
+      "dateStarted": "2023-03-24T16:14:46+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------------+---------+\n|          name|     area|\n+--------------+---------+\n|        France| 547030.0|\n|        Greece| 131940.0|\n|    Montenegro|  14026.0|\n|         Spain| 504750.0|\n|       Germany| 356910.0|\n|       Austria|  83850.0|\n|Czech Republic|  78703.0|\n|       Albania|  28750.0|\n|       Hungary|  93030.0|\n|      Slovakia|  48845.0|\n| Liechtenstein|    160.0|\n|         Italy| 301230.0|\n|      Slovenia|  20256.0|\n|        Kosovo|  10887.0|\n|     Macedonia|  25333.0|\n|        Serbia|  77474.0|\n|       Andorra|    450.0|\n|       Ukraine| 603700.0|\n|        Russia|1.70752E7|\n|       Belgium|  30510.0|\n+--------------+---------+\nonly showing top 20 rows\n\n\u001b[1m\u001b[34mcountriesArea\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [name: string, area: double]\n"
+          }
+        ]
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "completionKey": "TAB",
+          "editOnDblClick": false,
+          "completionSupport": true,
+          "language": "scala"
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=168",
+              "$$hashKey": "object:13364"
+            },
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=169",
+              "$$hashKey": "object:13365"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1679673536979_295184412",
+      "id": "paragraph_1679673536979_295184412",
+      "dateCreated": "2023-03-24T15:58:56+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:11949",
+      "text": "val countriesDensity = population2010.join(countriesArea, Seq(\"name\"), \"inner\")\n    .select($\"name\", expr(\"pop2010 / area\").as(\"density\"))\n    .orderBy(desc(\"density\"))\n    .limit(3)\n\ncountriesDensity.show()",
+      "dateUpdated": "2023-03-24T16:14:48+0000",
+      "dateFinished": "2023-03-24T16:14:49+0000",
+      "dateStarted": "2023-03-24T16:14:48+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---------+------------------+\n|     name|           density|\n+---------+------------------+\n|    Macao|        31382.0625|\n|   Monaco|19392.105263157897|\n|Singapore| 8025.134366108125|\n+---------+------------------+\n\n\u001b[1m\u001b[34mcountriesDensity\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.Dataset[org.apache.spark.sql.Row]\u001b[0m = [name: string, density: double]\n"
+          }
+        ]
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "completionKey": "TAB",
+          "editOnDblClick": false,
+          "completionSupport": true,
+          "language": "scala"
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=170",
+              "$$hashKey": "object:13413"
+            },
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=171",
+              "$$hashKey": "object:13414"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1679673744088_294491789",
+      "id": "paragraph_1679673744088_294491789",
+      "dateCreated": "2023-03-24T16:02:24+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:12244",
+      "text": "val popInCities = citiesDF\n    .where($\"population\" > 50000)\n    .groupBy(\"country\")\n    .agg(sum(\"population\").as(\"pop_cities\"))\n\npopInCities.show()",
+      "dateUpdated": "2023-03-24T16:14:53+0000",
+      "dateFinished": "2023-03-24T16:14:53+0000",
+      "dateStarted": "2023-03-24T16:14:53+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+----------+\n|country|pop_cities|\n+-------+----------+\n|     LT|   1005136|\n|      K|    703963|\n|     DZ|   7235824|\n|     RG|   1862042|\n|     CI|   6252517|\n|     AZ|   2763900|\n|     UA|  17198533|\n|    ARM|   1066264|\n|     RO|   6017684|\n|    JOR|   2458813|\n|     NL|   5454065|\n|     BS|    248948|\n|   WEST|    289278|\n|   REUN|    249263|\n|     PL|  11074917|\n|     MK|    622712|\n|    BRN|    143035|\n|    MYA|   9560951|\n|    MAL|   6595392|\n|    NEP|   1699953|\n+-------+----------+\nonly showing top 20 rows\n\n\u001b[1m\u001b[34mpopInCities\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [country: string, pop_cities: bigint]\n"
+          }
+        ]
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "completionKey": "TAB",
+          "editOnDblClick": false,
+          "completionSupport": true,
+          "language": "scala"
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=172",
+              "$$hashKey": "object:13462"
+            },
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=173",
+              "$$hashKey": "object:13463"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1679674236538_1994262635",
+      "id": "paragraph_1679674236538_1994262635",
+      "dateCreated": "2023-03-24T16:10:36+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:12661",
+      "text": "population2010.show()",
+      "dateUpdated": "2023-03-24T16:14:55+0000",
+      "dateFinished": "2023-03-24T16:14:56+0000",
+      "dateStarted": "2023-03-24T16:14:56+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------------+----+---------+\n|          name|code|  pop2010|\n+--------------+----+---------+\n|         Congo| RCB|  4001831|\n|    Azerbaijan|  AZ|  8922447|\n|          Iraq| IRQ| 25897848|\n| Cote d'Ivoire|  CI| 18976588|\n|       Lesotho|  LS|  2008921|\n|       Estonia|  EW|  1565662|\n| Guinea-Bissau| GNB|  1586624|\n|          Fiji| FJI|   860559|\n|      Pakistan|  PK|173149306|\n|American Samoa|AMSA|    57291|\n|       Albania|  AL|  3446882|\n|  Saint Martin|SMAR|    37630|\n|        Israel|  IL|  7552000|\n|     Australia| AUS| 19855288|\n|        Uganda| EAU| 24227297|\n|         Kenya| EAK| 40909194|\n|       Belgium|   B| 10296350|\n|        Poland|  PL| 38230000|\n|      Malaysia| MAL| 27565821|\n|     Guatemala| GCA| 11237196|\n+--------------+----+---------+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "completionKey": "TAB",
+          "editOnDblClick": false,
+          "completionSupport": true,
+          "language": "scala"
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=194",
+              "$$hashKey": "object:14005"
+            },
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=195",
+              "$$hashKey": "object:14006"
+            },
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=197",
+              "$$hashKey": "object:14007"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1679674374118_134828316",
+      "id": "paragraph_1679674374118_134828316",
+      "dateCreated": "2023-03-24T16:12:54+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:12927",
+      "text": "population2010.join(popInCities, popInCities(\"country\") === population2010(\"code\"))\n    .select($\"name\", expr(\"(pop_cities / pop2010) * 100\").as(\"perc_in_cities\"))\n    .orderBy(desc(\"perc_in_cities\"))\n    .limit(3)\n    .show()",
+      "dateUpdated": "2023-03-24T16:18:29+0000",
+      "dateFinished": "2023-03-24T16:18:30+0000",
+      "dateStarted": "2023-03-24T16:18:29+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---------+------------------+\n|     name|    perc_in_cities|\n+---------+------------------+\n|    Ceuta|108.82764816233784|\n|Hong Kong|102.77848756458371|\n|Singapore|             100.0|\n+---------+------------------+\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "completionKey": "TAB",
+          "editOnDblClick": false,
+          "completionSupport": true,
+          "language": "scala"
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1679674573006_1204315778",
+      "id": "paragraph_1679674573006_1204315778",
+      "dateCreated": "2023-03-24T16:16:13+0000",
+      "status": "READY",
+      "focus": true,
+      "$$hashKey": "object:13472"
+    }
+  ],
+  "name": "MondialDB – DataFrames",
+  "id": "2HWEMR76Y",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.10.1",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {},
+  "path": "/MondialDB – DataFrames"
+}

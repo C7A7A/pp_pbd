@@ -1,0 +1,757 @@
+﻿{
+  "paragraphs": [
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "completionKey": "TAB",
+          "editOnDblClick": false,
+          "completionSupport": true,
+          "language": "scala"
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=2",
+              "$$hashKey": "object:2220"
+            },
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=3",
+              "$$hashKey": "object:2221"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1679665726177_1609077828",
+      "id": "paragraph_1679665726177_1609077828",
+      "dateCreated": "2023-03-24T13:48:46+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:1740",
+      "text": "import org.apache.spark.sql._\nval gameInfosDF: DataFrame = spark.read.\n    format(\"org.apache.spark.csv\").\n    option(\"header\", true).\n    option(\"inferSchema\", true).\n    csv(\"/user/czajkamateusz999/labs/spark/ign.csv\").cache()",
+      "dateUpdated": "2023-03-24T14:09:11+0000",
+      "dateFinished": "2023-03-24T14:09:12+0000",
+      "dateStarted": "2023-03-24T14:09:11+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql._\n\u001b[1m\u001b[34mgameInfosDF\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [_c0: int, score_phrase: string ... 9 more fields]\n"
+          }
+        ]
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "completionKey": "TAB",
+          "editOnDblClick": false,
+          "completionSupport": true,
+          "language": "scala"
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1679665785939_1447691557",
+      "id": "paragraph_1679665785939_1447691557",
+      "dateCreated": "2023-03-24T13:49:45+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:1814",
+      "text": "gameInfosDF.printSchema",
+      "dateUpdated": "2023-03-24T14:09:16+0000",
+      "dateFinished": "2023-03-24T14:09:16+0000",
+      "dateStarted": "2023-03-24T14:09:16+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- _c0: integer (nullable = true)\n |-- score_phrase: string (nullable = true)\n |-- title: string (nullable = true)\n |-- url: string (nullable = true)\n |-- platform: string (nullable = true)\n |-- score: double (nullable = true)\n |-- genre: string (nullable = true)\n |-- editors_choice: string (nullable = true)\n |-- release_year: integer (nullable = true)\n |-- release_month: integer (nullable = true)\n |-- release_day: integer (nullable = true)\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "completionKey": "TAB",
+          "editOnDblClick": false,
+          "completionSupport": true,
+          "language": "scala"
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=11",
+              "$$hashKey": "object:2709"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1679666276217_1250592817",
+      "id": "paragraph_1679666276217_1250592817",
+      "dateCreated": "2023-03-24T13:57:56+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:1967",
+      "text": "gameInfosDF.where($\"release_year\" === \"2016\" && $\"platform\" === \"PC\").orderBy(desc(\"score\")).limit(3).select(\"title\", \"score\").show()\n    ",
+      "dateUpdated": "2023-03-24T14:19:42+0000",
+      "dateFinished": "2023-03-24T14:19:42+0000",
+      "dateStarted": "2023-03-24T14:19:42+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----------+-----+\n|      title|score|\n+-----------+-----+\n|  Undertale| 10.0|\n|The Witness| 10.0|\n|     Inside| 10.0|\n+-----------+-----+\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "completionKey": "TAB",
+          "editOnDblClick": false,
+          "completionSupport": true,
+          "language": "scala"
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=9",
+              "$$hashKey": "object:2625"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1679666461027_952777262",
+      "id": "paragraph_1679666461027_952777262",
+      "dateCreated": "2023-03-24T14:01:01+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:2061",
+      "text": "",
+      "dateUpdated": "2023-03-24T14:18:48+0000",
+      "dateFinished": "2023-03-24T14:14:11+0000",
+      "dateStarted": "2023-03-24T14:14:11+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------------------+-----+\n|               title|score|\n+--------------------+-----+\n|           Undertale| 10.0|\n|         The Witness| 10.0|\n|         The Witness| 10.0|\n|         The Witness| 10.0|\n|           Undertale| 10.0|\n|              Inside| 10.0|\n|              Inside| 10.0|\n|              Inside| 10.0|\n|Fire Emblem Fates...|  9.5|\n|Pro Evolution Soc...|  9.5|\n+--------------------+-----+\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "completionKey": "TAB",
+          "editOnDblClick": false,
+          "completionSupport": true,
+          "language": "scala"
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1679667176121_1651582063",
+      "id": "paragraph_1679667176121_1651582063",
+      "dateCreated": "2023-03-24T14:12:56+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:2438",
+      "text": "gameInfosDF.createOrReplaceTempView(\"games\")",
+      "dateUpdated": "2023-03-24T14:26:07+0000",
+      "dateFinished": "2023-03-24T14:26:07+0000",
+      "dateStarted": "2023-03-24T14:26:07+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "completionKey": "TAB",
+          "editOnDblClick": false,
+          "completionSupport": true,
+          "language": "scala"
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=19",
+              "$$hashKey": "object:3277"
+            },
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=20",
+              "$$hashKey": "object:3278"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1679667627855_1304880401",
+      "id": "paragraph_1679667627855_1304880401",
+      "dateCreated": "2023-03-24T14:20:27+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:2714",
+      "text": "spark.sql(\"\"\"\n    SELECT score_phrase, min(score), max(score)\n    FROM games\n    GROUP BY score_phrase\n    ORDER BY min(score)\n\"\"\").show()",
+      "dateUpdated": "2023-03-24T14:27:25+0000",
+      "dateFinished": "2023-03-24T14:27:26+0000",
+      "dateStarted": "2023-03-24T14:27:25+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+------------+----------+----------+\n|score_phrase|min(score)|max(score)|\n+------------+----------+----------+\n|    Disaster|       0.5|       0.8|\n|  Unbearable|       1.0|       1.9|\n|     Painful|       2.0|       2.9|\n|       Awful|       3.0|       3.9|\n|         Bad|       4.0|       4.9|\n|    Mediocre|       5.0|       5.9|\n|        Okay|       6.0|       6.9|\n|        Good|       7.0|       7.9|\n|       Great|       8.0|       8.9|\n|     Amazing|       9.0|       9.9|\n| Masterpiece|      10.0|      10.0|\n+------------+----------+----------+\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "completionKey": "TAB",
+          "editOnDblClick": false,
+          "completionSupport": true,
+          "language": "scala"
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=47",
+              "$$hashKey": "object:4328"
+            },
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=49",
+              "$$hashKey": "object:4329"
+            },
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=50",
+              "$$hashKey": "object:4330"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1679667978699_1554590308",
+      "id": "paragraph_1679667978699_1554590308",
+      "dateCreated": "2023-03-24T14:26:18+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:2952",
+      "text": "spark.sql(\"\"\"\n    SELECT g.release_year, g.platform, count(g.title) as amount_games, avg(g.score) as avg_score\n    FROM games g JOIN (\n        SELECT count(*) AS amount_reviews, platform\n        FROM games\n        GROUP BY platform\n        HAVING count(*) > 200\n    ) gc\n    ON g.platform = gc.platform\n    WHERE g.release_year >= 2000\n    GROUP BY g.platform, g.release_year\n    ORDER BY g.release_year, platform\n\"\"\").show()",
+      "dateUpdated": "2023-03-24T14:40:53+0000",
+      "dateFinished": "2023-03-24T14:40:53+0000",
+      "dateStarted": "2023-03-24T14:40:53+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+------------+----------------+------------+------------------+\n|release_year|        platform|amount_games|         avg_score|\n+------------+----------------+------------+------------------+\n|        2000|       Dreamcast|         167| 7.248502994011972|\n|        2000|  Game Boy Color|         210| 5.923809523809524|\n|        2000|     Nintendo 64|          78|  6.76153846153846|\n|        2000|              PC|         266|7.0278195488721815|\n|        2000|     PlayStation|         248| 6.438306451612904|\n|        2000|   PlayStation 2|          45|7.2444444444444445|\n|        2001|       Dreamcast|          61|7.7114754098360665|\n|        2001|Game Boy Advance|          76| 6.803947368421052|\n|        2001|  Game Boy Color|          56| 6.982142857142857|\n|        2001|        GameCube|          17| 8.152941176470588|\n|        2001|     Nintendo 64|          10| 6.610000000000001|\n|        2001|              PC|         225| 7.092444444444446|\n|        2001|     PlayStation|          48| 6.268750000000001|\n|        2001|   PlayStation 2|         159|  7.19748427672956|\n|        2001|            Xbox|          33|  7.78787878787879|\n|        2002|       Dreamcast|           3| 7.933333333333333|\n|        2002|Game Boy Advance|         172| 6.693023255813954|\n|        2002|  Game Boy Color|           4|               6.5|\n|        2002|        GameCube|         132| 6.969696969696967|\n|        2002|     Nintendo 64|           1|               8.6|\n+------------+----------------+------------+------------------+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "completionKey": "TAB",
+          "editOnDblClick": false,
+          "completionSupport": true,
+          "language": "sql"
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "lineChart",
+              "height": 783.4,
+              "optionOpen": true,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "release_year": "string",
+                      "platform": "string",
+                      "amount_games": "string",
+                      "avg_score": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "stackedAreaChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default",
+                  "style": "stack"
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default",
+                  "stacked": true
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default",
+                  "lineWithFocus": false,
+                  "isDateFormat": false
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "release_year",
+                  "index": 0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [
+                {
+                  "name": "platform",
+                  "index": 1,
+                  "aggr": "sum"
+                }
+              ],
+              "values": [
+                {
+                  "name": "amount_games",
+                  "index": 2,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=51",
+              "$$hashKey": "object:7906"
+            },
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=53",
+              "$$hashKey": "object:7907"
+            },
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=54",
+              "$$hashKey": "object:7908"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1679668189169_1336522330",
+      "id": "paragraph_1679668189169_1336522330",
+      "dateCreated": "2023-03-24T14:29:49+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:3287",
+      "text": "%sql\nSELECT g.release_year, g.platform, count(g.title) as amount_games, avg(g.score) as avg_score\n    FROM games g JOIN (\n        SELECT count(*) AS amount_reviews, platform\n        FROM games\n        GROUP BY platform\n        HAVING count(*) > 200\n    ) gc\n    ON g.platform = gc.platform\n    WHERE g.release_year >= 2000\n    GROUP BY g.platform, g.release_year\n    ORDER BY g.release_year, platform",
+      "dateUpdated": "2023-03-24T14:45:15+0000",
+      "dateFinished": "2023-03-24T14:41:05+0000",
+      "dateStarted": "2023-03-24T14:41:04+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "release_year\tplatform\tamount_games\tavg_score\n2000\tDreamcast\t167\t7.248502994011972\n2000\tGame Boy Color\t210\t5.923809523809524\n2000\tNintendo 64\t78\t6.76153846153846\n2000\tPC\t266\t7.0278195488721815\n2000\tPlayStation\t248\t6.438306451612904\n2000\tPlayStation 2\t45\t7.2444444444444445\n2001\tDreamcast\t61\t7.7114754098360665\n2001\tGame Boy Advance\t76\t6.803947368421052\n2001\tGame Boy Color\t56\t6.982142857142857\n2001\tGameCube\t17\t8.152941176470588\n2001\tNintendo 64\t10\t6.610000000000001\n2001\tPC\t225\t7.092444444444446\n2001\tPlayStation\t48\t6.268750000000001\n2001\tPlayStation 2\t159\t7.19748427672956\n2001\tXbox\t33\t7.78787878787879\n2002\tDreamcast\t3\t7.933333333333333\n2002\tGame Boy Advance\t172\t6.693023255813954\n2002\tGame Boy Color\t4\t6.5\n2002\tGameCube\t132\t6.969696969696967\n2002\tNintendo 64\t1\t8.6\n2002\tPC\t191\t7.131937172774868\n2002\tPlayStation\t14\t5.7142857142857135\n2002\tPlayStation 2\t231\t6.91428571428571\n2002\tXbox\t150\t7.0906666666666665\n2003\tGame Boy Advance\t141\t6.858865248226948\n2003\tGameCube\t137\t6.86058394160584\n2003\tPC\t203\t7.563054187192118\n2003\tPlayStation\t2\t5.9\n2003\tPlayStation 2\t221\t7.471945701357468\n2003\tWireless\t82\t6.313414634146342\n2003\tXbox\t168\t7.488095238095243\n2004\tGame Boy Advance\t105\t6.570476190476191\n2004\tGameCube\t93\t7.224731182795697\n2004\tNintendo DS\t11\t6.472727272727272\n2004\tPC\t196\t7.1178571428571376\n2004\tPlayStation 2\t232\t7.216379310344828\n2004\tWireless\t166\t7.546385542168678\n2004\tXbox\t185\t7.1756756756756745\n2004\tXbox 360\t1\t9.8\n2005\tGame Boy Advance\t56\t6.601785714285714\n2005\tGameCube\t86\t7.143023255813952\n2005\tNintendo DS\t73\t6.669863013698631\n2005\tPC\t147\t7.451700680272106\n2005\tPlayStation 2\t232\t7.105172413793105\n2005\tPlayStation Portable\t67\t7.352238805970148\n2005\tWireless\t204\t7.4112745098039285\n2005\tXbox\t184\t7.268478260869567\n2005\tXbox 360\t29\t7.710344827586208\n2006\tDreamcast\t1\t6.5\n2006\tGame Boy Advance\t61\t5.88688524590164\n2006\tGameCube\t39\t6.843589743589743\n2006\tNintendo DS\t124\t6.174193548387096\n2006\tPC\t175\t6.926285714285716\n2006\tPlayStation 2\t210\t6.559523809523805\n2006\tPlayStation 3\t21\t7.276190476190475\n2006\tPlayStation Portable\t140\t6.875\n2006\tWii\t49\t6.653061224489797\n2006\tWireless\t169\t7.056804733727809\n2006\tXbox\t98\t6.625510204081632\n2006\tXbox 360\t100\t7.199000000000002\n2007\tGame Boy Advance\t12\t6.191666666666666\n2007\tGameCube\t5\t6.6\n2007\tNintendo DS\t262\t5.982824427480916\n2007\tPC\t157\t6.82547770700637\n2007\tPlayStation 2\t136\t6.2720588235294095\n2007\tPlayStation 3\t115\t7.18\n2007\tPlayStation Portable\t142\t6.628873239436616\n2007\tWii\t286\t6.429020979020979\n2007\tWireless\t208\t7.168749999999999\n2007\tXbox\t3\t7.666666666666667\n2007\tXbox 360\t193\t6.976165803108812\n2008\tNintendo DS\t310\t6.08967741935484\n2008\tPC\t264\t6.690151515151518\n2008\tPlayStation 2\t156\t5.826923076923074\n2008\tPlayStation 3\t190\t7.1800000000000015\n2008\tPlayStation Portable\t75\t6.6493333333333355\n2008\tWii\t373\t5.971581769436997\n2008\tWireless\t78\t6.9410256410256395\n2008\tXbox 360\t247\t6.770040485829961\n2008\tiPhone\t110\t6.824545454545454\n2009\tNintendo DS\t167\t6.535329341317365\n2009\tNintendo DSi\t54\t6.533333333333332\n2009\tPC\t191\t7.040837696335075\n2009\tPlayStation 2\t58\t6.131034482758621\n2009\tPlayStation 3\t215\t7.247441860465119\n2009\tPlayStation Portable\t98\t6.58673469387755\n2009\tWii\t357\t6.312605042016804\n2009\tWireless\t2\t8.25\n2009\tXbox 360\t272\t7.067279411764705\n2009\tiPhone\t227\t7.403083700440532\n2010\tNintendo DS\t65\t7.0200000000000005\n2010\tNintendo DSi\t121\t6.454545454545454\n2010\tPC\t136\t7.447058823529412\n2010\tPlayStation 2\t6\t6.733333333333333\n2010\tPlayStation 3\t212\t6.8830188679245285\n2010\tPlayStation Portable\t85\t6.376470588235295\n2010\tWii\t192\t6.399479166666666\n2010\tWireless\t1\t7.5\n2010\tXbox 360\t248\t7.102016129032258\n2010\tiPhone\t213\t7.202347417840375\n2011\tNintendo 3DS\t84\t6.946428571428571\n2011\tNintendo DS\t30\t7.166666666666667\n2011\tNintendo DSi\t75\t6.18\n2011\tPC\t168\t7.229166666666667\n2011\tPlayStation 3\t228\t7.125\n2011\tPlayStation Portable\t23\t7.260869565217392\n2011\tWii\t95\t6.536842105263158\n2011\tXbox 360\t213\t7.025821596244131\n2011\tiPhone\t132\t7.465909090909091\n2012\tNintendo 3DS\t40\t7.4875\n2012\tNintendo DS\t3\t9.4\n2012\tNintendo DSi\t4\t5.5\n2012\tPC\t147\t7.426530612244897\n2012\tPlayStation 3\t172\t7.288372093023256\n2012\tPlayStation 4\t1\t9.0\n2012\tPlayStation Portable\t2\t8.2\n2012\tWii\t11\t7.709090909090909\n2012\tXbox 360\t170\t7.458235294117648\n2012\tiPhone\t74\t7.51756756756757\n2013\tNintendo 3DS\t47\t7.559574468085106\n2013\tPC\t180\t7.2177777777777745\n2013\tPlayStation 3\t130\t7.434615384615383\n2013\tPlayStation 4\t34\t8.088235294117647\n2013\tPlayStation Portable\t1\t5.8\n2013\tWii\t3\t8.2\n2013\tXbox 360\t104\t7.388461538461536\n2013\tXbox One\t23\t7.586956521739132\n2013\tiPhone\t55\t7.403636363636363\n2014\tNintendo 3DS\t24\t7.545833333333334\n2014\tPC\t156\t7.435256410256411\n2014\tPlayStation 3\t67\t7.385074626865673\n2014\tPlayStation 4\t84\t7.495238095238094\n2014\tXbox 360\t50\t7.3820000000000014\n2014\tXbox One\t59\t7.6796610169491535\n2014\tiPhone\t18\t7.294444444444445\n2015\tNintendo 3DS\t15\t7.706666666666666\n2015\tPC\t118\t7.624576271186439\n2015\tPlayStation 3\t5\t8.0\n2015\tPlayStation 4\t97\t7.724742268041235\n2015\tXbox 360\t3\t7.633333333333333\n2015\tXbox One\t85\t7.75764705882353\n2015\tiPhone\t11\t7.127272727272728\n2016\tNintendo 3DS\t15\t7.453333333333334\n2016\tPC\t94\t7.623404255319148\n2016\tPlayStation 3\t1\t9.0\n2016\tPlayStation 4\t61\t7.539344262295082\n2016\tXbox One\t41\t7.448780487804878\n2016\tiPhone\t2\t6.25\n"
+          }
+        ]
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "completionKey": "TAB",
+          "editOnDblClick": false,
+          "completionSupport": true,
+          "language": "scala"
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=68",
+              "$$hashKey": "object:8574"
+            },
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=69",
+              "$$hashKey": "object:8575"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1679668332651_125662415",
+      "id": "paragraph_1679668332651_125662415",
+      "dateCreated": "2023-03-24T14:32:12+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:3573",
+      "text": "val platformReviews200: DataFrame = gameInfosDF.groupBy(\"platform\").agg(count(\"title\").as(\"amount_reviews\")).where($\"amount_reviews\" > 200)\nplatformReviews200.show()",
+      "dateUpdated": "2023-03-24T14:52:17+0000",
+      "dateFinished": "2023-03-24T14:52:18+0000",
+      "dateStarted": "2023-03-24T14:52:17+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------------------+--------------+\n|            platform|amount_reviews|\n+--------------------+--------------+\n|                  PC|          3370|\n|         Nintendo DS|          1045|\n|            GameCube|           509|\n|            Wireless|           910|\n|    Game Boy Advance|           623|\n|      Game Boy Color|           356|\n|            Xbox One|           208|\n|              iPhone|           842|\n|        Nintendo DSi|           254|\n|       PlayStation 2|          1686|\n|         PlayStation|           952|\n|       PlayStation 3|          1356|\n|           Dreamcast|           286|\n|                 Wii|          1366|\n|                Xbox|           821|\n|       PlayStation 4|           277|\n|        Nintendo 3DS|           225|\n|PlayStation Portable|           633|\n|         Nintendo 64|           302|\n|            Xbox 360|          1631|\n+--------------------+--------------+\n\n\u001b[1m\u001b[34mplatformReviews200\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [platform: string, amount_reviews: bigint]\n"
+          }
+        ]
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "completionKey": "TAB",
+          "editOnDblClick": false,
+          "completionSupport": true,
+          "language": "scala"
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=86",
+              "$$hashKey": "object:9505"
+            },
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=88",
+              "$$hashKey": "object:9506"
+            },
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=89",
+              "$$hashKey": "object:9507"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1679669221827_1111767641",
+      "id": "paragraph_1679669221827_1111767641",
+      "dateCreated": "2023-03-24T14:47:01+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:7936",
+      "text": "gameInfosDF.join(platformReviews200, Seq(\"platform\"), \"inner\")\n  .where($\"release_year\" >= 2000)\n  .groupBy(gameInfosDF(\"release_year\"), gameInfosDF(\"platform\"))\n  .agg(avg($\"score\").as(\"average_score\"), count($\"title\").as(\"amount_reviews\"))\n  .orderBy(\"release_year\", \"platform\")\n  .show()",
+      "dateUpdated": "2023-03-24T15:08:24+0000",
+      "dateFinished": "2023-03-24T15:08:25+0000",
+      "dateStarted": "2023-03-24T15:08:24+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+------------+----------------+------------------+--------------+\n|release_year|        platform|     average_score|amount_reviews|\n+------------+----------------+------------------+--------------+\n|        2000|       Dreamcast| 7.248502994011972|           167|\n|        2000|  Game Boy Color| 5.923809523809524|           210|\n|        2000|     Nintendo 64|  6.76153846153846|            78|\n|        2000|              PC|7.0278195488721815|           266|\n|        2000|     PlayStation| 6.438306451612904|           248|\n|        2000|   PlayStation 2|7.2444444444444445|            45|\n|        2001|       Dreamcast|7.7114754098360665|            61|\n|        2001|Game Boy Advance| 6.803947368421052|            76|\n|        2001|  Game Boy Color| 6.982142857142857|            56|\n|        2001|        GameCube| 8.152941176470588|            17|\n|        2001|     Nintendo 64| 6.610000000000001|            10|\n|        2001|              PC| 7.092444444444446|           225|\n|        2001|     PlayStation| 6.268750000000001|            48|\n|        2001|   PlayStation 2|  7.19748427672956|           159|\n|        2001|            Xbox|  7.78787878787879|            33|\n|        2002|       Dreamcast| 7.933333333333333|             3|\n|        2002|Game Boy Advance| 6.693023255813954|           172|\n|        2002|  Game Boy Color|               6.5|             4|\n|        2002|        GameCube| 6.969696969696967|           132|\n|        2002|     Nintendo 64|               8.6|             1|\n+------------+----------------+------------------+--------------+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "completionKey": "TAB",
+          "editOnDblClick": false,
+          "completionSupport": true,
+          "language": "scala"
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=98",
+              "$$hashKey": "object:9860"
+            },
+            {
+              "jobUrl": "http://bigdata-intro-m.europe-west4-c.c.put-bdstream-2023-03-mc-379419.internal:41071/jobs/job?id=99",
+              "$$hashKey": "object:9861"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1679669440729_1561446841",
+      "id": "paragraph_1679669440729_1561446841",
+      "dateCreated": "2023-03-24T14:50:40+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:8361",
+      "text": "gameInfosDF\n    .where($\"title\" like (\"%Heroes of Might and Magic%\"))\n    .groupBy(\"title\")\n    .agg(avg($\"score\").as(\"average_score\"), min($\"release_year\").as(\"release_year\"))\n    .orderBy(\"release_year\")\n    .show(truncate=false)",
+      "dateUpdated": "2023-03-24T15:15:03+0000",
+      "dateFinished": "2023-03-24T15:15:03+0000",
+      "dateStarted": "2023-03-24T15:15:03+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---------------------------------------------------------+-------------+------------+\n|title                                                    |average_score|release_year|\n+---------------------------------------------------------+-------------+------------+\n|Heroes of Might and Magic III: Armageddon's Blade        |9.0          |1999        |\n|Heroes of Might and Magic III: The Restoration of Erathia|9.0          |1999        |\n|Heroes of Might and Magic III: Shadow of Death           |9.0          |2000        |\n|Heroes of Might and Magic                                |7.0          |2000        |\n|Heroes of Might and Magic: Quest for the DragonBone Staff|7.7          |2001        |\n|Heroes of Might and Magic IV: The Gathering Storm        |7.7          |2002        |\n|Heroes of Might and Magic IV                             |8.85         |2002        |\n|Heroes of Might and Magic IV: Winds of War               |6.9          |2003        |\n|Heroes of Might and Magic V: Hammers of Fate             |6.5          |2006        |\n|Heroes of Might and Magic V                              |7.8          |2006        |\n|Heroes of Might and Magic V: Tribes of The East          |7.9          |2007        |\n+---------------------------------------------------------+-------------+------------+\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "completionKey": "TAB",
+          "editOnDblClick": false,
+          "completionSupport": true,
+          "language": "scala"
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1679670180209_1922550162",
+      "id": "paragraph_1679670180209_1922550162",
+      "dateCreated": "2023-03-24T15:03:00+0000",
+      "status": "READY",
+      "focus": true,
+      "$$hashKey": "object:8901"
+    }
+  ],
+  "name": "20 Years of Games - DataFrames",
+  "id": "2HY852JFN",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.10.1",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {},
+  "path": "/20 Years of Games - DataFrames"
+}

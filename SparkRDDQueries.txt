@@ -1,0 +1,44 @@
+1. 
+nasaLogRdd.count()
+
+2. 
+val codes404Amount = replyCodesRdd.filter(_ == 404).count()
+
+3. 
+(codes500Amount.toDouble / codes200Amount.toDouble) * 100
+
+4.
+def getHost(line: String): String = {
+    val pattern = """^\S+""".r
+    pattern.findFirstIn(line).toString
+}
+
+val replyHostsRdd = nasaLogRdd.
+    map(line => getHost(line)).
+    cache()
+
+replyHostsRdd.filter(word => word.endsWith(".pl)")).count()
+
+5.
+def getPolishHost200(line: String): String = {
+    val pattern = """^[^\s]+\.pl\s.*200.*""".r
+    val found = pattern.findFirstIn(line)
+
+    if (found == None) return "wrong"
+    
+    found.toString
+}
+
+val replyPolishHosts200Rdd = nasaLogRdd.
+    map(line => getPolishHost200(line)).
+    filter(word => word != "wrong").
+    cache()
+
+dalej za trudne :)
+
+6.
+gameInfosRdd.filter(game => game.genre.contains("Racing")).filter(game => game.platform == "Nintendo 64").sortBy(game => (game.release_year, game.release_month, game.release_day)).collect().foreach(println)
+
+7.
+val games = gameInfosRdd.filter(_.platform == "PlayStation 4").filter(_.release_year == 2014)
+games.map(_.score).sum / games.count
